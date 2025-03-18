@@ -30,12 +30,12 @@ private final EstudianteService estudianteService;
     }
 
     @PostMapping //USADO PARA GUARDAR O ACTUALIZAR EN BASE DE DATOS
-    public void GuardarActualizar(@RequestBody Estudiante estudiante){
+    public void guardarActualizar(@RequestBody Estudiante estudiante){
         estudianteService.guardarOActualizar(estudiante);
     }
 
     @DeleteMapping("/{idEstudiante}")
-    public void GuardarActualizar(@PathVariable("idEstudiante") Long idEstudiante){
+    public void borrar(@PathVariable("idEstudiante") Long idEstudiante){
         estudianteService.borrar(idEstudiante);
     }
 

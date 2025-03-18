@@ -1,5 +1,6 @@
 package com.example.CRUD.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -11,14 +12,19 @@ public class Estudiante {
 
     @Id //DEFINE IDENTIFICADOR UNICO
     @GeneratedValue (strategy = GenerationType.IDENTITY) //AUTOGENERA idEstudiante DE MANERA CORELATIVA
+    @JsonProperty("idEstudiante")
     private Long idEstudiante; //SPRING TOMA EL CONTROL DE LA idEstudiante
 
+    @JsonProperty("nombre")
     private String nombre;
 
+    @JsonProperty("apellido")
     private String apellido;
 
+    @JsonProperty("edad")
     private int edad;
 
+    @JsonProperty("Correo_Electronico")
     @Column(name = "Correo_Electronico", unique = true, nullable = false)
     private String email;
 
